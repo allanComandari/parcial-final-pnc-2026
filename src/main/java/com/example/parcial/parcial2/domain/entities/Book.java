@@ -27,7 +27,7 @@ public class Book {
     private String author;
 
     @Enumerated(EnumType.STRING)
-    private Genre genre;
+    private String genre;  /*resolviendo*/
 
     @Column(nullable = false)
     private String isbn;

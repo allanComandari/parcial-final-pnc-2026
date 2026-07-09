@@ -26,6 +26,16 @@ Actualmente:
 
 **Instrucción:** Explique la causa del problema y resuélvalo.
 
+**RESPUESTA**: La causa del problema es que en el GenreCountDto.java sale asi definido el tipo genre como string: "public class GenreCountDto {
+private String genre;
+private long count;
+}
+"
+
+Mientras que en Book.java aparece que se ha definido genre con tipo Genre : "  @Enumerated(EnumType.STRING)
+private Genre genre;" entonces eso crea conflicto
+
+
 ---
 
 ### 2. Error al volver a prestar un libro (10%)
@@ -54,6 +64,8 @@ GET /books?id=ed16ed1e-7017-4697-a08a-d28c09a74acf
 
 **Instrucción:** Explique la causa del problema.
 
+
+
 ---
 
 ### 5. Error al crear un libro (10%)
@@ -73,6 +85,8 @@ QA ha reportado que el siguiente payload enviado al endpoint `POST /books` provo
 
 **Instrucción:** Explique la causa del problema.
 
+**Respuesta**
+en Book.java el tipo de genre era Genre y en la consulta no lo tomaba en cuenta ya que debia de ser un string
 ---
 
 ### 6. Devolución de libros no prestados (20%)
